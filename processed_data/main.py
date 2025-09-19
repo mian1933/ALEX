@@ -4,10 +4,10 @@ import pandas as pd
 df_bar = pd.read_parquet('../dataset/Bar-Exam-QA/barexam_qa.parquet')
 df_housing_aux = pd.read_parquet('../dataset/HousingQA/questions_aux.parquet')
 
-# 设置随机种子，确保可复现
+
 RANDOM_SEED = 42
 
-# 每个取五分之一
+
 df_bar_labeled = df_bar.sample(frac=0.2, random_state=RANDOM_SEED)
 df_housing_aux_labeled = df_housing_aux.sample(frac=0.2, random_state=RANDOM_SEED)
 
@@ -24,7 +24,7 @@ def split_remaining(df_full, df_labeled):
 df_bar_unlabeled, df_bar_val = split_remaining(df_bar, df_bar_labeled)
 df_housing_aux_unlabeled, df_housing_aux_val = split_remaining(df_housing_aux, df_housing_aux_labeled)
 
-# --- Step 3: 保存 unlabeled 和 validation 部分 ---
+
 df_bar_unlabeled.to_json('./unlabeled/bar_exam_unlabeled.jsonl', orient='records', lines=True)
 df_housing_aux_unlabeled.to_json('./unlabeled/housing_aux_unlabeled.jsonl', orient='records', lines=True)
 
@@ -36,7 +36,7 @@ import json
 import csv
 import os
 
-# 文件路径配置
+
 input_files_unlabeled = {
     "housing_aux_unlabeled.jsonl": "housing_aux_unlabeled.csv",
     "housing_unlabeled.jsonl": "housing_unlabeled.csv",
@@ -47,7 +47,7 @@ input_files_val = {
     "housing_val.jsonl": "housing_val.csv",
     "bar_exam_val.jsonl": "bar_exam_val.csv"
 }
-# 转换函数
+
 def process_file(input_path, output_path):
     rows = []
     with open(input_path, "r", encoding="utf-8") as f:
