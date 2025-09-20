@@ -1,6 +1,6 @@
 import pandas as pd
 
-# 加载数据集
+
 df_bar = pd.read_parquet('../dataset/Bar-Exam-QA/barexam_qa.parquet')
 df_housing_aux = pd.read_parquet('../dataset/HousingQA/questions_aux.parquet')
 
@@ -53,7 +53,7 @@ def process_file(input_path, output_path):
     with open(input_path, "r", encoding="utf-8") as f:
         for idx, line in enumerate(f):
             data = json.loads(line.strip())
-            if "choice_a" in data:  # 多选题（bar_exam）
+            if "choice_a" in data:
                 prompt_background = data.get("prompt", "")
                 question = data.get("question", "")
                 A = data["choice_a"]
@@ -70,7 +70,7 @@ def process_file(input_path, output_path):
                     f"Choices:\nA: {A}\nB: {B}\nC: {C}\nD: {D}\n"
                     "Answer:"
                 )
-            else:  # Yes/No题（housing）
+            else:
                 state = data.get("state", "")
                 question = data.get("question", "")
                 full_context = f"state：{state}\n\nquestion：{question}"
@@ -81,7 +81,7 @@ def process_file(input_path, output_path):
                 )
             rows.append([question_text])
 
-    # 写入 CSV
+
     with open(output_path, "w", newline='', encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["question_text"])
