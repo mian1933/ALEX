@@ -5,7 +5,7 @@ Existing legal Retrieval-Augmented Generation (RAG) systems rely on static workf
 ## 📔 Overview & Contributions
 
 <p align="center">
-  <img src="pictures/img.png" alt="Framework Overview" width="600"/><br>
+  <img src="pictures/img.png" alt="Framework Overview" width="100%"/><br>
   <strong>Figure 1:</strong> Overview of the ALEX.
 </p>
 
