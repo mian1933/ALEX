@@ -24,13 +24,13 @@ This paper makes the following contributions:
 Follow the steps below to download datasets, preprocess data, train models, and run inference.
 
 ##  Download Datasets
-We use the following datasets. Please download them from Hugging Face:
+We use the following datasets. Please download them from Hugging Face and place them in the `data/` folder:
 
 - [barexam_qa](https://huggingface.co/datasets/reglab/barexam_qa)  
 - [housing_qa](https://huggingface.co/datasets/reglab/housing_qa)  
 
 ##  Download Classification Model
-We use **flan-t5-large** as the classification model. Please download it from Hugging Face:
+We use **flan-t5-large** as the classification model. Please download it from Hugging Face and place it in the `flan-t5-large/` folder:
 
 - [flan-t5-large](https://huggingface.co/google/flan-t5-large)  
 
@@ -42,7 +42,7 @@ Run the following preprocessing scripts to prepare the datasets for training and
 cd processed_data
 python split.py
 cd processed_data/classify
-python lable.py
+python label.py
 ```
 ##  Train Classification Model
 Train the complexity classifier using the prepared labeled data:
