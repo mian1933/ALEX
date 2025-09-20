@@ -29,10 +29,13 @@ We use the following datasets. Please download them from Hugging Face and place 
 - [barexam_qa](https://huggingface.co/datasets/reglab/barexam_qa)  
 - [housing_qa](https://huggingface.co/datasets/reglab/housing_qa)  
 
-##  Download Classification Model
-We use **flan-t5-large** as the classification model. Please download it from Hugging Face and place it in the `flan-t5-large/` folder:
+## 📥 Download Models
 
-- [flan-t5-large](https://huggingface.co/google/flan-t5-large)  
+We use the following models. Please download them from Hugging Face and place them in the corresponding folders:
+
+- **Classification Model**: [flan-t5-large](https://huggingface.co/google/flan-t5-large), place it in the `flan-t5-large/` folder  
+- **Embedding Model**: [bge-m3](https://huggingface.co/BAAI/bge-m3), place it in the `bge-m3/` folder  
+
 
 #  Usage
 ##  Data Processing
