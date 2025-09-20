@@ -73,7 +73,13 @@ Execute the main question-answering pipeline:
 
 ```bash
 cd infer
+
 python create_data.py
-python deepseek_infer.py
+
+python deepseek_infer.py \
+  --bar-exam-file data/bar_exam_labeled.jsonl \
+  --housing-file data/housing_labeled.jsonl \
+  --output-folder results
+
 
 ```
