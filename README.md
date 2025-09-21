@@ -66,6 +66,7 @@ python processed_data/passage/pdf.py
 Extract text from source documents and build the vector database for retrieval:
 
 ```bash
+pip install chromadb
 cd processed_data/passage
 python passage.py
 python embedding2.py
